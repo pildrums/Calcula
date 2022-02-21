@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const Calculator = () => {
   const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-  const ops = ['/', '*', '+', '-', '.'];
-  const operation = ['÷', 'x', '+', '-', '·'];
+  const ops = ['/', '*', '+', '-'];
+  const operation = ['÷', 'x', '+', '-'];
 
   const [calc, setCalc] = useState('');
   const [result, setResult] = useState('');
@@ -60,6 +60,7 @@ const Calculator = () => {
               <button key={index} onClick={() => onUpdateCalc(digits[index])}>{num}</button>
             ))}
             <button onClick={onCalc}>=</button>
+            <button onClick={() => onUpdateCalc(ops[4])}>.</button>
           </Digits>
           <Operator>
             {ops.map((oper, index) => (
